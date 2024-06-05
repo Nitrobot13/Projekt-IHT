@@ -14,7 +14,6 @@ def detect_and_draw_lines(image_path, output_path):
     
     lines = cv2.HoughLines(blurred_edges, 1, np.pi/360, 80)
 
-
     # Draw the lines on the image for HoughLines
     if lines is not None:
         for line in lines:
@@ -70,8 +69,8 @@ def detect_and_draw_lines_HoughLinesP(image_path, output_path):
     cv2.imwrite(output_path, image)
 
 
-output_folder = 'new_lined_output'
-input_folder = 'new_images'
+output_folder = 'lined_output'
+input_folder = 'images'
 HoughLinesP = True
 
 # Create a directory for output images if it doesn't exist
@@ -92,6 +91,7 @@ for filename in os.listdir(input_folder):
 
 print("Line detection and drawing complete. Using HoughLinesP: ", HoughLinesP)
 
+#TODO: Test some more parameters for Blurring
 #TODO: Find a way to line the dimmer structures of the image
 #TODO: Cluster lines together to form one line using some Algorithm
 #TODO: Extract that lines coordinates
