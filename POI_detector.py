@@ -8,7 +8,7 @@ def find_contours(image, min_area=20000):
 
     contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     
-    # Filter contours by area
+    # Filter contours by area -> sort out smaller contours
     contours = [cnt for cnt in contours if cv2.contourArea(cnt) > min_area]   
     return contours
 
@@ -41,6 +41,8 @@ def process_images_in_folder(input_folder, output_folder):
                 cv2.waitKey()
     cv2.destroyAllWindows()
 
-input_folder = 'images'
+input_folder = 'new_images'
 output_folder = 'output'
 process_images_in_folder(input_folder, output_folder)
+
+#TODO: Adapt code for new images if possible
