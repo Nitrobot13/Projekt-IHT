@@ -41,8 +41,10 @@ def process_images_in_folder(input_folder, output_folder):
                 cv2.waitKey()
     cv2.destroyAllWindows()
 
-input_folder = 'new_images'
+input_folder = 'images'
 output_folder = 'output'
 process_images_in_folder(input_folder, output_folder)
 
 #TODO: Adapt code for new images if possible
+#TODO: Recognize the whole Alignment mark as ONE unique entity if possible
+
