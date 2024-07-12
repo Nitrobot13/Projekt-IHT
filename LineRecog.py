@@ -172,7 +172,3 @@ for filename in os.listdir(input_folder):
             detect_and_draw_lines(image_path,output_path)
 
 print("Line detection and drawing complete. Using HoughLinesP: ", HoughLinesP)
-
-#TODO: Find a way to line the dimmer structures of the image
-#TODO: Cluster lines together to form one line using some Algorithm -> SKLEARN
-#TODO: Extract that lines coordinates
