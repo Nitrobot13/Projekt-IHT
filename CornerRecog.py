@@ -7,7 +7,7 @@ def detect_and_mark_corners(image_path, output_path):
 
     blockSize = 15
     apertureSize = 11
-    k = 0.08
+    k = 0.04
 
     gray = np.float32(gray)
 
@@ -15,8 +15,9 @@ def detect_and_mark_corners(image_path, output_path):
 
     dest = cv2.dilate(dest, None)
 
-    image[dest > 0.01 * dest.max()] = [0,0,255]
+    image[dest > 0.001 * dest.max()] = [0,0,255]
 
+    cv2.imwrite(output_path, image)
     cv2.imshow('image', image)
     cv2.waitKey()
 
